@@ -25,6 +25,23 @@ def searchNode(data, needle):
             return True
     return False
 
+def findNode(data, needle):
+    for p in data['nodes']:
+        if p['id'] == needle:
+            return p['id']
+    return 0
+
+def updateScore(node,delta):
+    with open(config.database,'w') as json_file:
+        data = json.load(json_file)
+
+        id = findNode(data,node)
+        oldScore = data['nodes'][id]['score']
+        newScore = oldScore + delta
+
+        json.dump(data,json_file)
+
+
 
 persist(m.randomword(5),m.randomword(5),1000)
 #addNode()

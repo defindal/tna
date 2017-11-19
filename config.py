@@ -1,2 +1,2 @@
 
-database = 'network.json'
+database = 'terr.json'
