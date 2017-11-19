@@ -26,7 +26,7 @@ for ind in jsonData['CONSOLIDATED_LIST']['INDIVIDUALS']['INDIVIDUAL']:
 
     data['nodes'].append({
         'id': newNode,
-        'score': 0,
+        'score': random.randint(1,7),
         'note' : ind['COMMENTS1']['$']
     })
 
